@@ -26,8 +26,8 @@ export default function handler(req, res) {
     fs.writeFileSync(filePath, JSON.stringify(data));
     res.status(201).json({ message: "Success", user: newUser });
   } else {
-    // const filePath = buildUsersPath();
-    // const data = extractUser(filePath);
+    const filePath = buildUsersPath();
+    const data = extractUser(filePath);
     // res.status(200).json({ users: data });
     res.status(200).json({ users: [{ name: "marko", id: "1" }] });
   }
